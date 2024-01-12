@@ -3,7 +3,7 @@ package org.sasanlabs.service.vulnerability.sampleVulnerability;
 import org.sasanlabs.internal.utility.LevelConstants;
 import org.sasanlabs.internal.utility.Variant;
 import org.sasanlabs.internal.utility.annotations.AttackVector;
-import org.sasanlabs.internal.utility.annotations.VulnerableAppRequestMapping;
+import org.sasanlabs.internal.utility.annotations.VulnerableAppRequestMapping;aaa
 import org.sasanlabs.internal.utility.annotations.VulnerableAppRestController;
 import org.sasanlabs.service.vulnerability.bean.GenericVulnerabilityResponseBean;
 import org.sasanlabs.vulnerability.types.VulnerabilityType;
