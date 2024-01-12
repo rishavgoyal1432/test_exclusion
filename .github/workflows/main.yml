@@ -1,0 +1,26 @@
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write
+      security-events: write
+      actions: read
+    steps:
+      - name: Checkmarx CxFlow Action
+        uses: checkmarx-ts/checkmarx-cxflow-github-action@v1.9
+        with:
+          project: CxFlow Project
+          team: CxServer
+          checkmarx_url: https://a789c394f17b4a.lhr.life
+          checkmarx_username: rishavgoyal1432
+          checkmarx_password: Rishav@2698
+          checkmarx_client_secret: 014DF517-39D1-4453-B7B3-9930C563627C
+          scanners: sast
+          params: --namespace=rishavgoyal1432 --repo-name=3rd --branch=main --cx-flow.filter-severity --cx-flow.filter-category --checkmarx.disable-clubbing=true --repo-url=https://github.com/rishavgoyal1432/3rd.git
+
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: cx.sarif
