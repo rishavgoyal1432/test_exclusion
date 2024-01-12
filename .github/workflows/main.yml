@@ -1,3 +1,13 @@
+name: CxFlow
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    - cron: '18 4 * * 5'
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -7,13 +17,14 @@ jobs:
       pull-requests: write
       security-events: write
       actions: read
+
     steps:
       - name: Checkmarx CxFlow Action
         uses: checkmarx-ts/checkmarx-cxflow-github-action@v1.9
         with:
           project: CxFlow Project
           team: CxServer
-          checkmarx_url: https://a789c394f17b4a.lhr.life
+          checkmarx_url: ${{ secrets.CHECKMARX_URL }}
           checkmarx_username: rishavgoyal1432
           checkmarx_password: Rishav@2698
           checkmarx_client_secret: 014DF517-39D1-4453-B7B3-9930C563627C
